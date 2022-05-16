@@ -20,22 +20,23 @@ class NavigationServiceImpl implements NavigationService {
   GlobalKey<NavigatorState> get navigationKey => _navigationKey;
 
   void pop(returnValue) {
-    return _navigationKey.currentState.pop(returnValue);
+    return _navigationKey.currentState!.pop(returnValue);
   }
   // bool pop({returnValue}) {
   //   return navigatorKey.currentState.pop(returnValue);
   // }
 
+  @override
   Future<dynamic> navigateTo(String routeName, {dynamic arguments}) {
     print('NavigationService navigateTo $routeName');
-    return _navigationKey.currentState
+    return _navigationKey.currentState!
         .pushNamed(routeName, arguments: arguments);
 
   }
 
   //new from provider architecture reference
   Future<dynamic> pushNamed(String routeName, {Object arguments}) {
-    return navigationKey.currentState
+    return navigationKey.currentState!
         .pushNamed(routeName, arguments: arguments);
   }
 
@@ -48,16 +49,17 @@ class NavigationServiceImpl implements NavigationService {
 
   Future<dynamic> popAllAndPushNamed(
       String routeName, {
-        Object arguments,
+        required Object arguments,
       }) {
-    return navigationKey.currentState.pushNamedAndRemoveUntil(
+    return navigationKey.currentState!.pushNamedAndRemoveUntil(
       routeName,
           (_) => false,
       arguments: arguments,
     );
   }
 
+  @override
   void popUntil(bool Function(Route<dynamic>) predicate) {
-    navigationKey.currentState.popUntil(predicate);
+    navigationKey.currentState!.popUntil(predicate);
   }
 }

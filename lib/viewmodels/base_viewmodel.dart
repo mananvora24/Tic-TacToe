@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:skyline_template_app/core/enums/view_state.dart';
+import 'package:cut_my_carbon/core/enums/view_state.dart';
 
 /// Class for view models to extend from. Keeps track
 /// of [ViewState] and exposes a function to change the
