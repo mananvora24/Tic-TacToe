@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe1/viewmodels/home_viewmodel.dart';
-import 'package:flutter/provider.dart';
+import 'package:provider/provider.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({Key key}) : super(key: key);
+  const HomeView({required Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class HomeView extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.blue[200],
+                            color: Colors.blue,
                             blurRadius: 8,
                             spreadRadius: 2,
                           )

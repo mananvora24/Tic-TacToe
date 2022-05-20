@@ -4,7 +4,7 @@ import 'package:tic_tac_toe1/viewmodels/login_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class LoginView extends StatelessWidget {
-  const LoginView({Key key}) : super(key: key);
+  const LoginView({required Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,7 @@ class LoginView extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.red[200],
+                            color: Colors.red,
                             blurRadius: 8,
                             spreadRadius: 2,
                           )
